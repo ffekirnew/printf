@@ -13,7 +13,12 @@ int _printf_reversed(va_list r)
 	int charachters;
 
 	va_copy(c, r);
-	string = malloc(sizeof(va_arg(r, char *)));
+	string = malloc(strlen(va_arg(r, char *)) + 1);
+	if (string == NULL)
+	{
+		free(string);
+		return (0);
+	}
 	strcpy(string, va_arg(c, char *));
 	charachters = _printf_reversed_recursive(string, 0);
 
@@ -33,7 +38,7 @@ int _printf_reversed_recursive(char *string, unsigned int index)
 {
 	int counter = 0;
 
-	if (!string[index])
+	if (string[index] == 0)
 	{
 		return (0);
 	}
@@ -58,7 +63,12 @@ int _printf_rot13ed(va_list R)
 	char *string;
 
 	va_copy(c, R);
-	string = malloc(sizeof(va_arg(R, char *)));
+	string = malloc(strlen(va_arg(R, char *)) + 1);
+	if (string == NULL)
+	{
+		free(string);
+		return (0);
+	}
 	strcpy(string, va_arg(c, char *));
 
 	while (string[i])

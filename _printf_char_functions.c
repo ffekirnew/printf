@@ -21,6 +21,11 @@ int _putchar_percent(va_list p)
  */
 int _putchar_str(va_list s)
 {
+	va_list p;
+
+	va_copy(p, s);
+	if (va_arg(p, char *) == NULL)
+		return (0);
 	return (_printf(va_arg(s, char *)));
 }
 
@@ -45,13 +50,17 @@ int _putchar_char(va_list c)
 int _putchar_string_literal(va_list S)
 {
 	int count, i = 0;
-	va_list copy;
+	va_list string_copy;
 	char *string;
 
-	va_copy(copy, S);
-
-	string = malloc(sizeof(va_arg(S, char *)) + 1);
-	strcpy(string, va_arg(copy, char *));
+	va_copy(string_copy, S);
+	string = malloc(strlen(va_arg(S, char *)) + 1);
+	if (string == NULL)
+	{
+		free(string);
+		return (0);
+	}
+	strcpy(string, va_arg(string_copy, char *));
 	while (string[i])
 	{
 		if (string[i] < 32 || string[i] >= 127)

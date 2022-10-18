@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int (*_printf_function)(va_list);
 
 	va_start(valist, format);
-	while (format[i])
+	while (format != NULL && format[i])
 	{
 		if (format[i] == '%')
 		{
