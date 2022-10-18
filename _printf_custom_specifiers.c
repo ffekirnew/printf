@@ -72,6 +72,6 @@ int _printf_rot13ed(va_list R)
 		i += 1;
 	}
 
-	free (string);
+	free(string);
 	return (i);
 }
