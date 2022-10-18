@@ -55,7 +55,7 @@ int _putchar_hexadecimal_upper(va_list X)
  *
  * Return: number of charachters printed to the screen
  */
-int base_convertor(unsigned int n, unsigned int base, char numbers[])
+int base_convertor(unsigned long int n, unsigned int base, char numbers[])
 {
 	int counter = 0;
 

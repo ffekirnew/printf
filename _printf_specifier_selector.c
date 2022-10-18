@@ -25,6 +25,7 @@ int (*_printf_selector(char specifier))(va_list)
 		{"%", _putchar_percent},
 		{"r", _printf_reversed},
 		{"R", _printf_rot13ed},
+		{"p", _printf_address},
 		{NULL, NULL}
 	};
 

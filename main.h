@@ -28,6 +28,9 @@ int _putchar_str(va_list s);
 int _putchar_char(va_list c);
 int _putchar_string_literal(va_list S);
 
+/* address specifier */
+int _printf_address(va_list p);
+
 /* Integer Specifiers */
 int _putchar_int(va_list i);
 int _putchar_unsigned_int(va_list u);
@@ -39,7 +42,7 @@ int _putchar_binary(va_list b);
 int _putchar_octal(va_list o);
 int _putchar_hexadecimal_upper(va_list X);
 int _putchar_hexadecimal_lower(va_list x);
-int base_convertor(unsigned int n, unsigned int base, char numbers[]);
+int base_convertor(unsigned long int n, unsigned int base, char numbers[]);
 
 /* Custom Specifiers */
 int _printf_reversed(va_list r);
