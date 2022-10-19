@@ -1,5 +1,4 @@
 ## _printf
-Some new changes
 This is our own version of the printf function found in unix systems. To read more about the printf function, read up on this: <a href="https://www.academia.edu/10297206/Secrets_of_printf_">The Secrets of Printf</a>.
 
 ### Files Description
